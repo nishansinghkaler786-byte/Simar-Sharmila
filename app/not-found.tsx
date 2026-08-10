@@ -9,44 +9,51 @@ export default function NotFound() {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: '2rem',
+        gap: '1.6rem',
+        background: '#0a0908',
+        textAlign: 'center',
       }}
     >
+      <p
+        style={{
+          fontFamily: 'var(--font-geist-mono, monospace)',
+          fontSize: 12,
+          letterSpacing: '0.18em',
+          color: '#ff5c38',
+        }}
+      >
+        [ 404 — NOT FOUND ]
+      </p>
       <h1
         style={{
-          fontFamily: 'var(--font-fraunces)',
-          fontSize: 'clamp(4rem, 12vw, 14rem)',
-          fontWeight: 300,
-          color: 'var(--faint)',
+          fontSize: 'clamp(3.5rem, 11vw, 10rem)',
+          fontWeight: 500,
           lineHeight: 1,
           letterSpacing: '-0.04em',
           margin: 0,
         }}
       >
-        404
+        Lost, <em style={{ fontStyle: 'italic', color: '#ff5c38' }}>gracefully.</em>
       </h1>
-      <p
-        style={{
-          fontFamily: 'var(--font-jetbrains-mono)',
-          color: 'var(--dim)',
-          fontSize: 13,
-          letterSpacing: '0.06em',
-        }}
-      >
-        This page doesn&apos;t exist.
+      <p style={{ color: 'var(--ink-dim)', fontSize: 14 }}>
+        This page doesn&apos;t exist — but the way back is effortless.
       </p>
       <Link
         href="/"
         style={{
-          fontFamily: 'var(--font-inter-tight)',
-          fontSize: 13,
-          color: 'var(--accent)',
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: 8,
+          background: '#ff5c38',
+          color: '#16100d',
+          fontWeight: 600,
+          fontSize: 14,
+          padding: '12px 22px',
+          borderRadius: 10,
           textDecoration: 'none',
-          borderBottom: '1px solid var(--accent)',
-          paddingBottom: 2,
         }}
       >
-        Back to Index
+        Back home →
       </Link>
     </div>
   );
