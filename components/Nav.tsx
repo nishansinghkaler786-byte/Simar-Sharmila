@@ -2,25 +2,22 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+
+const LINKS = [
+  { href: '#work', label: 'Work' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#skills', label: 'Skills' },
+];
 
 export default function Nav() {
-  const anbarRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLElement>(null);
   const [stuck, setStuck] = useState(false);
-  const [anbarHidden, setAnbarHidden] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const update = () => {
-      const y = window.scrollY;
-      const anbarH = anbarRef.current?.offsetHeight ?? 36;
-      const isStuck = y > 40;
-      setStuck(isStuck);
-      setAnbarHidden(isStuck);
-      if (navRef.current) {
-        navRef.current.style.setProperty('--nav-top', isStuck ? '14px' : `${anbarH + 14}px`);
-      }
+      setStuck(window.scrollY > 40);
+      if (navRef.current) navRef.current.style.setProperty('--nav-top', '14px');
     };
     update();
     window.addEventListener('scroll', update, { passive: true });
@@ -37,54 +34,44 @@ export default function Nav() {
   }, [mobileOpen]);
 
   return (
-    <>
-      <div ref={anbarRef} className={`anbar${anbarHidden ? ' is-hidden' : ''}`}>
-        Quality matters — open to collaboration, consulting &amp; speaking
+    <nav
+      ref={navRef}
+      className={`nv${stuck ? ' stuck' : ''}`}
+      style={{ '--nav-top': '14px' } as React.CSSProperties}
+    >
+      <Link href="/" className="nv__logo nv__logo--text" aria-label="Simranjeet Singh — home">
+        simranjeet<span>.singh</span>
+      </Link>
+
+      <div className="nv__links">
+        {LINKS.map((l) => (
+          <Link key={l.href} href={`/${l.href}`}>{l.label}</Link>
+        ))}
       </div>
 
-      <nav
-        ref={navRef}
-        className={`nv${stuck ? ' stuck' : ''}`}
-        style={{ '--nav-top': '50px' } as React.CSSProperties}
-      >
-        <Link href="/" className="nv__logo" aria-label="nishan.space home">
-          <Image src="/assets/wordmark-light.svg" alt="nishan.space" width={120} height={21} priority />
-        </Link>
+      <div className="nv__right">
+        <button
+          className={`nv__burger${mobileOpen ? ' open' : ''}`}
+          aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
+          onClick={() => setMobileOpen((v) => !v)}
+        >
+          <span /><span /><span />
+        </button>
+        <a href="mailto:simarramgarhia03@gmail.com" className="nv__cta">Get in touch</a>
+      </div>
 
-        <div className="nv__links">
-          <Link href="/#work">Work</Link>
-          <Link href="/#approach">Approach</Link>
-          <Link href="/#reviews">Reviews</Link>
+      {mobileOpen && (
+        <div className="nv__mobile open">
+          {LINKS.map((l, i) => (
+            <Link key={l.href} href={`/${l.href}`} onClick={() => setMobileOpen(false)}>
+              <span className="nvm__n">0{i + 1}</span>
+              <span className="nvm__t">{l.label}</span>
+              <span className="nvm__a">→</span>
+            </Link>
+          ))}
         </div>
-
-        <div className="nv__right">
-          <button
-            className={`nv__burger${mobileOpen ? ' open' : ''}`}
-            aria-label="Toggle menu"
-            aria-expanded={mobileOpen}
-            onClick={() => setMobileOpen((v) => !v)}
-          >
-            <span /><span /><span />
-          </button>
-          <Link href="/lets-build" className="nv__cta">Let&apos;s build</Link>
-        </div>
-
-        {mobileOpen && (
-          <div className="nv__mobile open">
-            {[
-              { href: '/#work', n: '01', label: 'Work' },
-              { href: '/#approach', n: '02', label: 'Approach' },
-              { href: '/#reviews', n: '03', label: 'Reviews' },
-            ].map(({ href, n, label }) => (
-              <Link key={href} href={href} onClick={() => setMobileOpen(false)}>
-                <span className="nvm__n">{n}</span>
-                <span className="nvm__t">{label}</span>
-                <span className="nvm__a">→</span>
-              </Link>
-            ))}
-          </div>
-        )}
-      </nav>
-    </>
+      )}
+    </nav>
   );
 }

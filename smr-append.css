@@ -1,0 +1,48 @@
+
+/* ============================================================
+   SMR — Simranjeet additions (text logo, footer, chips, projects)
+   ============================================================ */
+.nv__logo--text { font-size: 16.5px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; }
+.nv__logo--text span { color: #ff5c38; }
+
+/* project cards (no imagery — clean panels with gradient accent) */
+.cbx__proj { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 54px; }
+.cbx__projCard { position: relative; border: 1px solid var(--cx-line); border-radius: 14px; padding: clamp(28px, 3.4vw, 48px); background: #100f0e; overflow: hidden; transition: transform .45s var(--ease), border-color .45s; }
+.cbx__projCard::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 3px; }
+.cbx__projCard--a::before { background: linear-gradient(90deg, #ff5c38, transparent 70%); }
+.cbx__projCard--b::before { background: linear-gradient(90deg, #ffb49e, transparent 70%); }
+.cbx__projCard:hover { transform: translateY(-4px); border-color: rgba(255,92,56,.4); }
+.cbx__projCard h3 { margin-top: 16px; font-size: clamp(21px, 2.1vw, 27px); font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
+.cbx__projDesc { margin-top: 14px; color: var(--ink-dim); font-size: 14.5px; line-height: 1.65; }
+
+/* chips */
+.cbx__chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.cbx__chips span { font-family: var(--cx-mono); font-size: 11px; letter-spacing: .06em; color: var(--ink-soft); border: 1px solid var(--cx-line); border-radius: 999px; padding: 6px 12px; white-space: nowrap; }
+
+/* skills */
+.cbx__skills { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--cx-line); border: 1px solid var(--cx-line); margin-top: 54px; }
+.cbx__skillGroup { background: var(--cx-bg); padding: clamp(24px, 3vw, 40px); }
+.cbx__skillGroup h3 { font-family: var(--cx-mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--cx-accent); }
+
+/* education & certs */
+.cbx__edu { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 64px); margin-top: 54px; }
+.cbx__eduCol h3 { font-family: var(--cx-mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--cx-accent); }
+.cbx__eduCol ul { list-style: none; margin-top: 18px; display: flex; flex-direction: column; }
+.cbx__eduCol li { display: flex; flex-direction: column; gap: 3px; padding: 14px 0; border-bottom: 1px solid var(--cx-line); }
+.cbx__eduCol li b { font-size: 15.5px; font-weight: 600; }
+.cbx__eduCol li span { color: var(--ink-dim); font-size: 13px; }
+
+/* footer */
+.sft { border-top: 1px solid rgba(245,243,239,0.09); background: #0a0908; padding: clamp(40px, 6vw, 72px) var(--gutter) 32px; }
+.sft__in { max-width: var(--maxw); margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; flex-wrap: wrap; }
+.sft__name { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; }
+.sft__tag { margin-top: 4px; color: var(--ink-dim); font-size: 13.5px; }
+.sft__links { display: flex; gap: 22px; }
+.sft__links a { color: var(--ink-soft); text-decoration: none; font-size: 14px; transition: color .3s; }
+.sft__links a:hover { color: #ff5c38; }
+.sft__c { max-width: var(--maxw); margin: 36px auto 0; color: var(--ink-faint); font-size: 12px; font-family: var(--font-geist-mono, monospace); letter-spacing: .04em; }
+
+@media (max-width: 900px) {
+  .cbx__proj, .cbx__skills, .cbx__edu { grid-template-columns: 1fr; }
+  .cbx .cbx__svc[style] { grid-template-columns: 1fr !important; }
+}

@@ -19,40 +19,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://nishanspace.com'),
   title: {
-    default: 'Nishan Singh — Senior UX Designer',
-    template: '%s · nishanspace.com',
+    default: 'Simranjeet Singh — Senior UX/UI Designer',
+    template: '%s · Simranjeet Singh',
   },
   description:
-    'Senior UX Designer with 13 years helping teams turn complex enterprise systems into products people actually love. Based in Dubai, UAE.',
+    'Senior UX/UI Designer with 6+ years architecting scalable design systems and leading user-centered design across web and mobile. WCAG 2.2 accessibility, research-driven decisions, enterprise scale.',
   keywords: [
     'UX Designer',
-    'Senior UX Designer',
-    'Enterprise UX',
+    'UI Designer',
+    'Senior UX/UI Designer',
     'Design Systems',
-    'Product Design',
-    'Nishan Singh',
-    'Dubai UX Designer',
+    'Accessibility',
+    'WCAG',
+    'Simranjeet Singh',
+    'Bengaluru',
   ],
-  authors: [{ name: 'Nishan Singh', url: 'https://nishanspace.com' }],
-  creator: 'Nishan Singh',
-  openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://nishanspace.com',
-    siteName: 'nishanspace.com',
-    title: 'Nishan Singh — Senior UX Designer',
-    description:
-      'Senior UX Designer with 13 years helping teams turn complex enterprise systems into products people actually love.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Nishan Singh — Senior UX Designer' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Nishan Singh — Senior UX Designer',
-    description: 'Senior UX Designer with 13 years helping teams turn complex enterprise systems into products people actually love.',
-    images: ['/og-image.png'],
-  },
+  authors: [{ name: 'Simranjeet Singh' }],
+  creator: 'Simranjeet Singh',
   robots: { index: true, follow: true },
 };
 
