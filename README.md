@@ -1,9 +1,10 @@
-# Nishan Singh — UX Portfolio
+# Simranjeet Singh — UX/UI Portfolio
 
-Fresh portfolio website: **Next.js 16 + Three.js WebGL hero**, infra-tech design language (near-black canvas, coral accent, monospace labels).
+Portfolio website for **Simranjeet Singh**, Senior UX/UI Designer (Bengaluru, India) — built with **Next.js 16 + Three.js**, in a clean infra-tech design language: near-black canvas, coral accent, monospace labels.
 
-- Animated WebGL hero — particle terrain + wireframe torus knot, mouse parallax, `prefers-reduced-motion` fallback
-- Animated proof metrics, case studies (Lumen · Pocial · eBinaa), experience timeline, services, review marquee
+- Animated WebGL hero (particle terrain + wireframe torus knot, `prefers-reduced-motion` fallback)
+- Focus areas, selected projects (Taqtics, Praccel Read Aloud), experience timeline, skills, education & certifications, volunteering
+- WCAG-minded: semantic markup, reduced-motion support, accessible contrast
 
 ## Develop
 
@@ -12,6 +13,7 @@ npm install
 npm run dev   # http://localhost:3000
 ```
 
-## How this repo was assembled
+## Contact
 
-The site shares its asset library and case-study pages with [nishanspace](https://github.com/nishansinghkaler786-byte/nishanspace); the one-shot GitHub Actions workflow `.github/workflows/import-site.yml` imports that base and overlays the redesign. After it has run once, the workflow file can be deleted.
+- simarramgarhia03@gmail.com
+- [LinkedIn](https://www.linkedin.com/in/ux-designer-simranjeet/) · [Dribbble](https://dribbble.com/ux-designer-simranjeet)
