@@ -1,0 +1,28 @@
+name: Simranjeet cleanup
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Remove nishanspace pages and assets, merge styles
+        run: |
+          rm -rf app/case-studies app/about app/work app/lets-build app/api lib public/assets
+          rm -f public/logo.png public/next.svg public/vercel.svg public/globe.svg public/file.svg public/window.svg app/apple-icon.png app/favicon.ico
+          cat smr-append.css >> app/globals.css
+          rm smr-append.css
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Rebrand to Simranjeet Singh: remove nishanspace pages & assets, merge new styles"
+          git push
