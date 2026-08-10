@@ -1,106 +1,128 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
 const HeroScene = dynamic(() => import('@/components/HeroScene'), { ssr: false });
 
-/* ─── content ────────────────────────────────── */
+/* ─── content — from Simranjeet's resume ───────── */
 const DOMAINS = [
-  'Psychometrics', 'FinTech', 'Web3', 'Healthcare EMR', 'Enterprise SaaS',
-  'AI / ML', 'Design Systems', 'Accessibility', 'PropTech', 'MarTech',
+  'UX/UI Design', 'Design Systems', 'Accessibility', 'User Research',
+  'Retail SaaS', 'Sales CRM', 'EdTech', 'AI-Assisted Design',
+  'Prototyping', 'DesignOps', 'Motion & Micro-interactions',
 ];
 
-const METRICS = [
-  { n: 13, suffix: '+', label: 'years designing enterprise software' },
-  { n: 500, suffix: '+', label: 'organizations served, 50+ countries' },
-  { n: 100, suffix: 'K+', label: 'daily active users on platforms I shaped' },
-  { n: 200, suffix: '+', label: 'components in one white-label system' },
-  { n: 98, suffix: '%', label: 'WCAG 2.1 AA compliance, up from 60%' },
-  { n: 91, suffix: '%', label: 'fewer irreversible Web3 transaction errors' },
-];
-
-const CASES = [
+const FOCUS = [
   {
-    slug: 'lumen',
-    num: '001',
-    tag: 'Consumer Crypto · iOS & Android',
-    title: 'Lumen — AI-guided crypto',
-    desc: 'A calm crypto app for first-timers. An AI guide explains every decision in plain language — light & dark, end to end.',
-    img: '/assets/lumen/home-dark.png',
+    n: '01',
+    h: 'Design systems that scale',
+    b: 'Atomic Design methodology, pattern libraries, and reusable component systems built on Material Design and Ant Design — style guides that speed teams up instead of slowing them down.',
   },
   {
-    slug: 'pocial',
-    num: '002',
-    tag: 'SaaS / MarTech · California',
-    title: 'Pocial — AI marketing',
-    desc: 'AI marketing-automation platform: 20+ tools organized into four color-coded hubs, plus a marketing site that routes two audiences.',
-    img: '/assets/pocial-home.png',
+    n: '02',
+    h: 'Accessibility as a baseline',
+    b: 'WCAG 2.2 standards implemented across enterprise assessment platforms — accessibility audits, compliant component design, and inclusive flows for candidates and recruiters alike.',
   },
   {
-    slug: 'ebinaa',
-    num: '003',
-    tag: 'PropTech · Oman · Bilingual RTL',
-    title: 'eBinaa — design, build & buy',
-    desc: 'Contractor marketplace connecting Omani homeowners with verified builders. English/Arabic RTL, bank-integrated.',
-    img: '/assets/ds-01-opportunities.png',
+    n: '03',
+    h: 'Research-driven decisions',
+    b: 'Usability testing, heuristic evaluations, journey mapping, A/B tests, and analytics with Hotjar and Google Analytics — design choices validated by users, not assumptions.',
+  },
+  {
+    n: '04',
+    h: 'AI-augmented workflow',
+    b: 'AI-powered prototyping, generative AI for design, prompt engineering, and AI-assisted user research — a modern toolkit applied with judgement, certified across multiple programs.',
   },
 ];
 
 const EXPERIENCE = [
   {
-    period: '2019 — NOW',
-    org: 'Mercer | Marsh McLennan',
-    role: 'Senior UI/UX Designer · Talent Enterprise',
-    body: 'Lead UX for Lighthouse, a psychometric platform serving 500+ organizations across 50+ countries — influencing $2B+ in annual hiring decisions.',
+    period: 'OCT 2024 — PRESENT',
+    org: 'Mercer Talent Enterprises',
+    role: 'Sr. UX/UI Designer · Dubai',
+    body: 'Leading end-to-end UX/UI for the Mercer Talent Enterprises assessment platform.',
     hits: [
-      'White-label design system, 200+ components — client implementation cut from 6 weeks to 1',
-      'Assessment completion up 28% · recruiter decisions 45% faster',
-      'UX cited as key differentiator in a $300M+ acquisition',
+      'Mobile-first design system with WCAG 2.2 compliance across candidate and recruiter portals',
+      'Partnered with senior leadership to align UX/UI strategy with business objectives',
+      'Facilitated design-thinking workshops and cross-functional product discovery sessions',
     ],
   },
   {
-    period: '2017 — 2019',
-    org: 'smartData Enterprises',
-    role: 'Design Team Lead · Healthcare & AI',
-    body: 'Led a 5-person team shipping 30+ HIPAA-regulated healthcare, AI/ML and SaaS products used by 100K+ people daily.',
+    period: 'FEB 2022 — SEP 2024',
+    org: 'Taqtics.co',
+    role: 'UX/UI Designer · Bangalore',
+    body: 'Designed the Taqtics retail & restaurant operations management suite end to end.',
     hits: [
-      'Clinical documentation errors down 67% — 50+ hours saved per practice monthly',
-      'Trial enrollment accelerated 42% · explainable-AI interfaces lifted model trust 38%',
+      'Modular, scalable workflows and components in Figma and Adobe XD',
+      'Evolved the design system with Atomic Design — pattern libraries that accelerated design velocity',
+      'IA, storyboards, wireframes and hi-fi mockups focused on cutting task-completion friction',
+      'Trusted design consultant and advisor to product and leadership teams',
     ],
   },
   {
-    period: '2013 — 2017',
-    org: 'Antier Solutions',
-    role: 'Web/UI-UX Team Lead · Blockchain',
-    body: 'Pioneered Web3 UX before design patterns existed — 100+ enterprise projects through crypto’s first growth wave.',
+    period: 'JUL 2021 — FEB 2022',
+    org: 'Uptics.io',
+    role: 'UX/UI Designer · USA (remote)',
+    body: 'Spearheaded UI/UX architecture for a sales-automation CRM.',
     hits: [
-      'Wallet onboarding drop-off cut from 73% to 12% — adoption up 85%',
-      'Fail-safe confirmation flows: irreversible errors down 91%',
-      'First-gen wallet & exchange patterns adopted by 15+ funded startups',
+      'Intuitive dashboards and simplified lead-management workflows to lift conversion',
+      'Personas from user research; solutions validated through iterative usability testing',
+      'A/B-tested email campaigns using click-through and open-rate data',
+    ],
+  },
+  {
+    period: 'JAN 2020 — MAY 2021',
+    org: 'FotograK Enterprises',
+    role: 'Sr. Artist & UI Designer · Chandigarh',
+    body: 'Responsive web and mobile design for B2B and e-commerce clients.',
+    hits: [
+      'Peer-to-peer fundraising platform designed for a confidential client',
+      'Full production pipeline: photography, editing, and marketing design for digital and print',
     ],
   },
 ];
 
-const SERVICES = [
-  { n: '01', h: 'Enterprise UX consulting', b: 'Embedded with your team to redesign a product, unblock a stalled redesign, or raise the UX bar across an org with real users and real debt.' },
-  { n: '02', h: 'Design system architecture', b: 'White-label, multi-tenant, token-driven. The kind of system that cuts client implementation from weeks to days — proven across 500+ organizations.' },
-  { n: '03', h: 'UX audit & strategy', b: 'A deep, honest teardown of your live product: concrete findings, a prioritized roadmap, and decisions your team can act on immediately.' },
-  { n: '04', h: 'Speaking & workshops', b: 'Enterprise UX, high-stakes domains, and design systems that scale — conferences, internal workshops, and design-org coaching.' },
+const PROJECTS = [
+  {
+    num: '001',
+    tag: 'Retail & Restaurant SaaS · 2022—2024',
+    title: 'Taqtics — Operations management, made manageable',
+    desc: 'Led UI/UX and rapid prototyping for a retail & restaurant operations platform. Built and maintained a scalable design system with style guides, pattern libraries and reusable components on Material Design and Ant Design. Validated every major decision with usability tests, heuristic evaluations and A/B testing — and mentored cross-functional teams through design critique and workshops.',
+    chips: ['Design system', 'Web + mobile', 'Usability testing', 'Design workshops'],
+    grad: 'a',
+  },
+  {
+    num: '002',
+    tag: 'EdTech · UX/UI Case Study',
+    title: 'Praccel Read Aloud — Literacy, by design',
+    desc: 'Sole product designer across the entire lifecycle — discovery, user research, information architecture, UI design, design systems, and developer handoff across three platforms. Designed a feedback loop where teachers assign passages and students submit voice recordings, measurably improving literacy outcomes for K-8 learners.',
+    chips: ['Solo end-to-end', '3 platforms', 'K-8 education', 'Accessibility-first'],
+    grad: 'b',
+  },
 ];
 
-const REVIEWS = [
-  { q: 'Who works with Nishan does not obtain only a good UX expert, but a really good partner for elevated results.', name: 'Sabby Singh', role: 'Enterprise Web3 solutions' },
-  { q: 'With very little direction other than a few examples and what I liked, Nishan turned those into an actual product.', name: 'Patrick Spielmann', role: 'Founder, LeadMagic.io' },
-  { q: 'The level of detail he puts in his work is astonishing and his work stands out from the rest of the team.', name: 'Harpreet Singh Sidhu', role: 'Product Designer · Microsoft' },
-  { q: 'He delivers peace of mind to clients and supervisors alike. Nishan has met every challenge face on.', name: 'Gunjit Singh', role: 'Business Analyst & PM' },
-  { q: 'Every time you can find something new and some creativity in his work — this is what makes him different.', name: 'Swati Rana', role: 'Immersive tech · AR/VR/XR' },
-  { q: 'Expert in creating stunning UI designs. Very good at improving the user experience of any project.', name: 'Tarandeep Singh', role: 'Ex-Nagarro · Same team' },
+const SKILLS = [
+  { h: 'Design & Strategy', items: ['UX/UI Design', 'Product Design', 'Design Systems', 'Information Architecture', 'Interaction Design', 'Visual Design', 'Design Thinking', 'Service Design', 'DesignOps'] },
+  { h: 'Research & Testing', items: ['User Research', 'Usability Testing', 'Heuristic Evaluation', 'Journey Mapping', 'A/B Testing', 'User Interviews', 'Hotjar / GA', 'CRO'] },
+  { h: 'Web & Mobile', items: ['Responsive Design', 'Mobile-first', 'WCAG Accessibility', 'Micro-interactions', 'Motion Design', 'Interactive Prototyping', 'Design Handoff & QA', 'SVG & Lottie'] },
+  { h: 'Tools & AI', items: ['Figma', 'Adobe XD', 'Sketch', 'Photoshop', 'Illustrator', 'Material Design', 'Ant Design', 'AI-powered Prototyping', 'Generative AI for Design', 'Prompt Engineering'] },
 ];
 
-/* ─── hooks ──────────────────────────────────── */
+const CERTS = [
+  ['Interaction Design Certification', 'Interaction Design Foundation · 2021'],
+  ['UI/UX Designing Course', 'Interaction Design Foundation'],
+  ['Claude.AI Design Expert', 'Outskills'],
+  ['User Experience Growth School', 'Growth School'],
+  ['AI Design & User Research Expert', 'Design for Change'],
+  ['Web Designing Training', 'DH Universal Group'],
+];
+
+const EDUCATION = [
+  ['PGDCA — Computer Applications', 'Panjab Technical University · Jalandhar · 2023'],
+  ['Bachelor of Arts', 'Panjab University · Chandigarh · 2020'],
+];
+
+/* ─── hooks ──────────────────────────────── */
 function useRevealFx() {
   useEffect(() => {
     const els = document.querySelectorAll<HTMLElement>('.fxr');
@@ -113,28 +135,6 @@ function useRevealFx() {
   }, []);
 }
 
-function Counter({ n, suffix }: { n: number; suffix: string }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const ob = new IntersectionObserver(([e]) => {
-      if (!e.isIntersecting) return;
-      ob.disconnect();
-      const start = performance.now(), dur = 1300;
-      const tick = (now: number) => {
-        const t = Math.min((now - start) / dur, 1);
-        el.textContent = String(Math.round((1 - Math.pow(1 - t, 3)) * n));
-        if (t < 1) requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
-    }, { threshold: 0.5 });
-    ob.observe(el);
-    return () => ob.disconnect();
-  }, [n]);
-  return <><span ref={ref}>0</span>{suffix}</>;
-}
-
 function Arr() {
   return (
     <svg width="13" height="11" viewBox="0 0 13 11" fill="none" aria-hidden="true" style={{ display: 'inline-block', flexShrink: 0 }}>
@@ -143,13 +143,13 @@ function Arr() {
   );
 }
 
-/* ─── page ───────────────────────────────────── */
+/* ─── page ───────────────────────────────── */
 export default function HomePage() {
   useRevealFx();
 
   return (
     <div className="cbx">
-      {/* ── HERO ─────────────────────────────── */}
+      {/* ── HERO ─────────────────────── */}
       <section className="cbx__hero" id="top">
         <HeroScene />
         <div className="cbx__grid" aria-hidden="true" />
@@ -157,26 +157,30 @@ export default function HomePage() {
 
         <div className="cbx__heroIn">
           <p className="cbx__eyebrow fxr">
-            <span className="cbx__dot" /> NISHAN SINGH — SENIOR PRODUCT DESIGNER · 13 YRS · DUBAI, UAE
+            <span className="cbx__dot" /> SIMRANJEET SINGH — SENIOR UX/UI DESIGNER · BENGALURU, INDIA
           </p>
           <h1 className="cbx__h1 fxr" style={{ transitionDelay: '.08s' }}>
-            Complex systems,<br />
-            <em>made obvious.</em>
+            Effortless<br />
+            <em>by design.</em>
           </h1>
           <p className="cbx__sub fxr" style={{ transitionDelay: '.16s' }}>
-            I design enterprise software people actually use — psychometric platforms
-            influencing $2B+ in hiring decisions, healthcare EMRs, and Web3 products
-            that cut irreversible errors 91%. Top 50 UX Designer, UAE.
+            Senior UX/UI designer with 6+ years architecting scalable design systems
+            and leading user-centered design across web and mobile — WCAG 2.2
+            accessibility, design-thinking workshops, and research-driven decisions
+            at enterprise scale.
           </p>
           <div className="cbx__act fxr" style={{ transitionDelay: '.24s' }}>
-            <Link href="/lets-build" className="cbx__btn">Build together <Arr /></Link>
-            <a href="/assets/Nishan-Resume.pdf" target="_blank" rel="noopener noreferrer" className="cbx__btn cbx__btn--ghost">
-              Resume ↗
+            <a href="mailto:simarramgarhia03@gmail.com" className="cbx__btn">Get in touch <Arr /></a>
+            <a href="https://www.linkedin.com/in/ux-designer-simranjeet/" target="_blank" rel="noopener noreferrer" className="cbx__btn cbx__btn--ghost">
+              LinkedIn ↗
+            </a>
+            <a href="https://dribbble.com/ux-designer-simranjeet" target="_blank" rel="noopener noreferrer" className="cbx__btn cbx__btn--ghost">
+              Dribbble ↗
             </a>
           </div>
 
           <div className="cbx__strip fxr" style={{ transitionDelay: '.32s' }}>
-            {[['13+', 'years'], ['500+', 'organizations'], ['50+', 'countries'], ['$2B+', 'decisions shaped']].map(([v, l]) => (
+            {[['6+', 'years in UX/UI'], ['WCAG 2.2', 'accessibility'], ['4', 'companies · 3 countries'], ['3', 'languages']].map(([v, l]) => (
               <div key={l} className="cbx__stat"><b>{v}</b><span>{l}</span></div>
             ))}
           </div>
@@ -191,50 +195,50 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── METRICS ──────────────────────────── */}
-      <section className="cbx__sec" id="proof">
+      {/* ── FOCUS ────────────────────── */}
+      <section className="cbx__sec" id="focus">
         <div className="cbx__inner">
-          <p className="cbx__label fxr">[ 01 — PROOF ]</p>
-          <h2 className="cbx__h2 fxr">Outcomes, not opinions.</h2>
-          <div className="cbx__metrics">
-            {METRICS.map((m, i) => (
-              <div key={m.label} className="cbx__metric fxr" style={{ transitionDelay: `${i * 0.06}s` }}>
-                <div className="cbx__metricN"><Counter n={m.n} suffix={m.suffix} /></div>
-                <p>{m.label}</p>
+          <p className="cbx__label fxr">[ 01 — WHAT I BRING ]</p>
+          <h2 className="cbx__h2 fxr">Craft, systemized.</h2>
+          <div className="cbx__svc">
+            {FOCUS.map((s, i) => (
+              <div key={s.n} className="cbx__svcCard fxr" style={{ transitionDelay: `${i * 0.07}s` }}>
+                <span className="cbx__svcN">{s.n}</span>
+                <h3>{s.h}</h3>
+                <p>{s.b}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── WORK ─────────────────────────────── */}
+      {/* ── PROJECTS ─────────────────── */}
       <section className="cbx__sec cbx__sec--line" id="work">
         <div className="cbx__inner">
           <p className="cbx__label fxr">[ 02 — SELECTED WORK ]</p>
-          <h2 className="cbx__h2 fxr">Case studies.</h2>
-          <div className="cbx__cases">
-            {CASES.map((c, i) => (
-              <Link key={c.slug} href={`/case-studies/${c.slug}`} className="cbx__case fxr" style={{ transitionDelay: `${i * 0.08}s` }}>
-                <div className="cbx__caseShot">
-                  <Image src={c.img} alt={c.title} fill sizes="(max-width: 900px) 100vw, 33vw" style={{ objectFit: 'cover', objectPosition: 'top' }} />
+          <h2 className="cbx__h2 fxr">Projects.</h2>
+          <div className="cbx__proj">
+            {PROJECTS.map((p, i) => (
+              <article key={p.num} className={`cbx__projCard fxr cbx__projCard--${p.grad}`} style={{ transitionDelay: `${i * 0.08}s` }}>
+                <div className="cbx__projTop">
+                  <span className="cbx__caseTag">{p.num} · {p.tag}</span>
                 </div>
-                <div className="cbx__caseBody">
-                  <p className="cbx__caseTag">{c.num} · {c.tag}</p>
-                  <h3>{c.title}</h3>
-                  <p className="cbx__caseDesc">{c.desc}</p>
-                  <span className="cbx__caseLink">View case study <Arr /></span>
+                <h3>{p.title}</h3>
+                <p className="cbx__projDesc">{p.desc}</p>
+                <div className="cbx__chips">
+                  {p.chips.map((c) => <span key={c}>{c}</span>)}
                 </div>
-              </Link>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── EXPERIENCE ───────────────────────── */}
+      {/* ── EXPERIENCE ───────────────── */}
       <section className="cbx__sec cbx__sec--line" id="experience">
         <div className="cbx__inner">
-          <p className="cbx__label fxr">[ 03 — TRACK RECORD ]</p>
-          <h2 className="cbx__h2 fxr">Thirteen years, three frontiers.</h2>
+          <p className="cbx__label fxr">[ 03 — EXPERIENCE ]</p>
+          <h2 className="cbx__h2 fxr">Six years, four chapters.</h2>
           <div className="cbx__xp">
             {EXPERIENCE.map((x, i) => (
               <div key={x.org} className="cbx__xpRow fxr" style={{ transitionDelay: `${i * 0.08}s` }}>
@@ -255,50 +259,83 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── SERVICES ─────────────────────────── */}
-      <section className="cbx__sec cbx__sec--line" id="services">
+      {/* ── SKILLS ───────────────────── */}
+      <section className="cbx__sec cbx__sec--line" id="skills">
         <div className="cbx__inner">
-          <p className="cbx__label fxr">[ 04 — ENGAGEMENTS ]</p>
-          <h2 className="cbx__h2 fxr">How we can work together.</h2>
-          <div className="cbx__svc">
-            {SERVICES.map((s, i) => (
-              <div key={s.n} className="cbx__svcCard fxr" style={{ transitionDelay: `${i * 0.07}s` }}>
-                <span className="cbx__svcN">{s.n}</span>
-                <h3>{s.h}</h3>
-                <p>{s.b}</p>
+          <p className="cbx__label fxr">[ 04 — SKILLS & TOOLS ]</p>
+          <h2 className="cbx__h2 fxr">The toolkit.</h2>
+          <div className="cbx__skills">
+            {SKILLS.map((g, i) => (
+              <div key={g.h} className="cbx__skillGroup fxr" style={{ transitionDelay: `${i * 0.06}s` }}>
+                <h3>{g.h}</h3>
+                <div className="cbx__chips">
+                  {g.items.map((s) => <span key={s}>{s}</span>)}
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── REVIEWS ──────────────────────────── */}
-      <section className="cbx__sec cbx__sec--line" id="reviews">
+      {/* ── EDUCATION & CERTS ────────────── */}
+      <section className="cbx__sec cbx__sec--line" id="education">
         <div className="cbx__inner">
-          <p className="cbx__label fxr">[ 05 — SIGNAL ]</p>
-          <h2 className="cbx__h2 fxr">Six perspectives, thirteen years.</h2>
-        </div>
-        <div className="cbx__revWrap">
-          <div className="cbx__revTrack">
-            {[...REVIEWS, ...REVIEWS].map((r, i) => (
-              <figure key={i} className="cbx__rev">
-                <blockquote>&ldquo;{r.q}&rdquo;</blockquote>
-                <figcaption><b>{r.name}</b><span>{r.role}</span></figcaption>
-              </figure>
-            ))}
+          <p className="cbx__label fxr">[ 05 — EDUCATION & CERTIFICATIONS ]</p>
+          <h2 className="cbx__h2 fxr">Always learning.</h2>
+          <div className="cbx__edu">
+            <div className="cbx__eduCol fxr">
+              <h3>Education</h3>
+              <ul>
+                {EDUCATION.map(([t, sub]) => (
+                  <li key={t}><b>{t}</b><span>{sub}</span></li>
+                ))}
+              </ul>
+              <h3 style={{ marginTop: 36 }}>Languages</h3>
+              <div className="cbx__chips">
+                {['English — fluent', 'Hindi — native', 'Punjabi — native'].map((l) => <span key={l}>{l}</span>)}
+              </div>
+            </div>
+            <div className="cbx__eduCol fxr" style={{ transitionDelay: '.08s' }}>
+              <h3>Certifications</h3>
+              <ul>
+                {CERTS.map(([t, sub]) => (
+                  <li key={t}><b>{t}</b><span>{sub}</span></li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── CTA ────────────────────────────── */}
+      {/* ── BEYOND WORK ────────────────── */}
+      <section className="cbx__sec cbx__sec--line" id="beyond">
+        <div className="cbx__inner">
+          <p className="cbx__label fxr">[ 06 — BEYOND WORK ]</p>
+          <h2 className="cbx__h2 fxr">Design is empathy, practiced.</h2>
+          <div className="cbx__svc" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
+            <div className="cbx__svcCard fxr">
+              <span className="cbx__svcN">SINCE 2019</span>
+              <h3>Volunteer teacher — Anganwadi</h3>
+              <p>7+ years teaching moral values and life lessons to young children at a government child-care center in Patiala — supporting early-childhood education and character building for underprivileged kids.</p>
+            </div>
+            <div className="cbx__svcCard fxr" style={{ transitionDelay: '.07s' }}>
+              <span className="cbx__svcN">SINCE 2024</span>
+              <h3>Volunteer — PGI Hospital, Chandigarh</h3>
+              <p>Food, medication and clothing support for underprivileged patients and their families — with 10% of salary consistently going to charitable initiatives for over four years.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA ────────────────────── */}
       <section className="cbx__cta">
         <div className="cbx__ctaGlow" aria-hidden="true" />
-        <p className="cbx__label fxr">[ 06 — NEXT ]</p>
-        <h2 className="cbx__ctaH fxr">Quality matters.<br /><em>Let&apos;s talk.</em></h2>
+        <p className="cbx__label fxr">[ 07 — NEXT ]</p>
+        <h2 className="cbx__ctaH fxr">Let&apos;s make it<br /><em>effortless.</em></h2>
         <div className="cbx__act fxr" style={{ justifyContent: 'center', transitionDelay: '.12s' }}>
-          <Link href="/lets-build" className="cbx__btn">Build together <Arr /></Link>
-          <a href="/assets/Nishan-Resume.pdf" target="_blank" rel="noopener noreferrer" className="cbx__btn cbx__btn--ghost">
-            Resume ↗
+          <a href="mailto:simarramgarhia03@gmail.com" className="cbx__btn">simarramgarhia03@gmail.com <Arr /></a>
+          <a href="https://www.linkedin.com/in/ux-designer-simranjeet/" target="_blank" rel="noopener noreferrer" className="cbx__btn cbx__btn--ghost">
+            LinkedIn ↗
           </a>
         </div>
       </section>
