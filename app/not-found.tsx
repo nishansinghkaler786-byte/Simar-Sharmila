@@ -9,51 +9,39 @@ export default function NotFound() {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: '1.6rem',
-        background: '#0a0908',
+        gap: '1.4rem',
         textAlign: 'center',
+        padding: '0 24px',
       }}
     >
       <p
         style={{
-          fontFamily: 'var(--font-geist-mono, monospace)',
-          fontSize: 12,
-          letterSpacing: '0.18em',
-          color: '#ff5c38',
+          fontFamily: 'var(--f-mono)',
+          fontSize: 11.5,
+          letterSpacing: '0.22em',
+          textTransform: 'uppercase',
+          color: 'var(--teal)',
         }}
       >
-        [ 404 — NOT FOUND ]
+        404 — Not found
       </p>
       <h1
         style={{
-          fontSize: 'clamp(3.5rem, 11vw, 10rem)',
-          fontWeight: 500,
-          lineHeight: 1,
-          letterSpacing: '-0.04em',
+          fontFamily: 'var(--f-display)',
+          fontWeight: 300,
+          fontSize: 'clamp(3.2rem, 10vw, 8.5rem)',
+          lineHeight: 1.02,
+          letterSpacing: '-0.025em',
           margin: 0,
         }}
       >
-        Lost, <em style={{ fontStyle: 'italic', color: '#ff5c38' }}>gracefully.</em>
+        Lost, <em style={{ fontStyle: 'italic', color: 'var(--teal)' }}>gracefully.</em>
       </h1>
-      <p style={{ color: 'var(--ink-dim)', fontSize: 14 }}>
+      <p style={{ color: 'var(--ink-dim)', fontSize: 15 }}>
         This page doesn&apos;t exist — but the way back is effortless.
       </p>
-      <Link
-        href="/"
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: 8,
-          background: '#ff5c38',
-          color: '#16100d',
-          fontWeight: 600,
-          fontSize: 14,
-          padding: '12px 22px',
-          borderRadius: 10,
-          textDecoration: 'none',
-        }}
-      >
-        Back home →
+      <Link href="/" className="pf-btn" style={{ marginTop: 8 }}>
+        Back home
       </Link>
     </div>
   );

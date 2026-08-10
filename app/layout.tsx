@@ -1,20 +1,28 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Fraunces, Manrope, IBM_Plex_Mono } from 'next/font/google';
 import './globals.css';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 
-const geist = Geist({
+const fraunces = Fraunces({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
-  variable: '--font-geist',
+  weight: ['300', '400', '500'],
+  style: ['normal', 'italic'],
+  variable: '--font-display',
   display: 'swap',
 });
 
-const geistMono = Geist_Mono({
+const manrope = Manrope({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-body',
+  display: 'swap',
+});
+
+const plexMono = IBM_Plex_Mono({
   subsets: ['latin'],
   weight: ['400', '500'],
-  variable: '--font-geist-mono',
+  variable: '--font-mono',
   display: 'swap',
 });
 
@@ -42,7 +50,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${geist.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${fraunces.variable} ${manrope.variable} ${plexMono.variable}`}>
       <body>
         <Nav />
         <main>{children}</main>
